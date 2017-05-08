@@ -1,0 +1,30 @@
+{
+  "name": "ss-auth",
+  "version": "0.0.1",
+  "description": "Stupid Simple Authentication",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rdegges/ss-auth.git"
+  },
+  "keywords": [
+    "authentication",
+    "mongodb",
+    "security",
+    "web"
+  ],
+  "author": "Randall Degges",
+  "license": "Unlicense",
+  "bugs": {
+    "url": "https://github.com/rdegges/ss-auth/issues"
+  },
+  "homepage": "https://github.com/rdegges/ss-auth#readme",
+  "dependencies": {
+    "express": "^4.15.2",
+    "pug": "^2.0.0-rc.1"
+  }
+}
