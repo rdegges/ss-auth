@@ -1,0 +1,11 @@
+extends base
+
+block vars
+  - var title = "Dashboard"
+
+block body
+  .container
+    .vertical-center
+      .jumbotron.col-sm-8
+        h3 Your User Data
+        pre #{userString}
