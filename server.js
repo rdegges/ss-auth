@@ -7,9 +7,10 @@ let app = express();
 
 // settings
 app.set("view engine", "pug");
+app.set("staticDir", path.join(__dirname, "static"));
 
 // middleware
-app.use("/static", express.static(path.join(__dirname, "static")));
+app.use("/static", express.static(app.get("staticDir")));
 
 // home page
 app.get("/", (req, res) => {
