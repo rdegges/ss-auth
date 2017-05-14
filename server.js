@@ -21,5 +21,10 @@ app.get("/register", (req, res) => {
   res.render("register");
 });
 
+// login page
+app.get("/login", (req, res) => {
+  res.render("login");
+});
+
 
 app.listen(3000);
