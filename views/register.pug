@@ -1,0 +1,23 @@
+extends base
+
+block vars
+  - var title = "Home"
+
+block body
+  .container.register
+    .vertical-center
+      .jumbotron.col-sm-8
+        h3 Please register below.
+        p &nbsp;
+        form.form-horizontal
+          .form-group
+            label.col-sm-2.control-label(for="email") Email
+            .col-sm-10
+              input.form-control(type="email", id="email", placeholder="Email")
+          .form-group
+            label.col-sm-2.control-label(for="password") Password
+            .col-sm-10
+              input.form-control(type="password", id="password", placeholder="Password")
+          .form-group
+            .col-sm-offset-2.col-sm-10
+              button.btn.btn-default(type="submit") Sign in
