@@ -5,8 +5,10 @@ block vars
 
 block body
   .page-header
-    h1 SS Auth
-      small Stupid-Simple Authentication
-  p.
-    Welcome to the SS Auth home page.  Please
-    <a href="/register">register</a> or <a href="/login">login</a> to continue!
+    h1 SS Auth #[small Stupid-Simple Authentication]
+  .container.home
+    .vertical-center
+      .jumbotron
+        p.
+          Please #[a(href="/register") register] or #[a(href="/login") login]
+          to continue!
