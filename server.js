@@ -16,5 +16,10 @@ app.get("/", (req, res) => {
   res.render("index");
 });
 
+// registration page
+app.get("/register", (req, res) => {
+  res.render("register");
+});
+
 
 app.listen(3000);
