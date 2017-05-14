@@ -13,11 +13,16 @@ h1 {
   align-items: center;
 }
 
-.home .jumbotron {
+.jumbotron {
   margin-left: auto;
   margin-right: auto;
 }
 
 .footer {
   font-size: 1.5em;
+  text-align: center;
+}
+
+.register h3 {
+  text-align: center;
 }
