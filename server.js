@@ -1,7 +1,12 @@
 const path = require("path");
 
+const express = require("express");
+const mongoose = require("mongoose");
 
 let app = express();
+
+// init
+mongoose.connect("mongodb://localhost/ss-auth");
 
 // settings
 app.set("view engine", "pug");
