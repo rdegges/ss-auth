@@ -8,7 +8,9 @@ block body
     .vertical-center
       .jumbotron.col-sm-8
         h3 Please sign in below.
-        form.form-horizontal
+        if error
+          p.error #{error}
+        form.form-horizontal(method="post")
           .form-group
             label.col-sm-2.control-label(for="email") Email
             .col-sm-10
