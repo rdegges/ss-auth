@@ -15,6 +15,7 @@ app.set("staticDir", path.join(__dirname, "static"));
 
 // middleware
 app.use("/static", express.static(app.get("staticDir")));
+app.use(bodyParser.urlencoded({ extended: false }));
 
 // home page
 app.get("/", (req, res) => {
