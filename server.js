@@ -4,7 +4,10 @@ const bcrypt = require("bcryptjs");
 const bodyParser = require("body-parser");
 const express = require("express");
 const mongoose = require("mongoose");
-const bodyParser = require("body-parser");
+const sessions = require("client-sessions");
+
+const auth = require("./auth");
+const authRoutes = require("./routes/auth");
 const models = require("./models");
 
 let app = express();
