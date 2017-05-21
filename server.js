@@ -21,7 +21,24 @@ app.set("staticDir", path.join(__dirname, "static"));
 
 // middleware
 app.use("/static", express.static(app.get("staticDir")));
+app.use(sessions({
+  cookieName: "session",
+  secret: 'asdggdsagdsagdsgdsagdsa',
+
+  // Make each login last for one day by default.
+  duration: 1000 * 60 * 60 * 24,
+
+  // Extend the session by ten minutes if the user is still active (instead of
+  // forcing expiration).
+  activeDuration: 1000 * 60 * 10,
+  cookie: {
+    ephemeral: false,
+    httpOnly: true,
+    secure: false
+  }
+}));
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(auth.loadUserFromSession);
 
 // home page
 app.get("/", (req, res) => {
