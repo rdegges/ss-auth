@@ -32,7 +32,7 @@ router.post('/register', (req, res) => {
         error = "That email is already taken. Please try another.";
       }
 
-      return res.render("register.jade", { error: error });
+      return res.render("register", { error: error });
     }
 
     auth.createUserSession(req, res, user);
