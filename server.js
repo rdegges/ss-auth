@@ -43,26 +43,7 @@ app.use(auth.loadUserFromSession);
 
 // routes
 app.use(authRoutes);
-
-// home page
-app.get("/", (req, res) => {
-  res.render("index");
-});
-
-// registration page
-app.get("/register", (req, res) => {
-  res.render("register");
-});
-
-// login page
-app.get("/login", (req, res) => {
-  res.render("login");
-});
-
-// dashboard page
-app.get("/dashboard", (req, res) => {
-  res.render("dashboard");
-});
+app.use(mainRoutes);
 
 // error handling
 app.use((err, req, res) => {
