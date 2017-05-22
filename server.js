@@ -10,6 +10,7 @@ const auth = require("./auth");
 const authRoutes = require("./routes/auth");
 const mainRoutes = require("./routes/main");
 const models = require("./models");
+const settings = require("./settings");
 
 let app = express();
 
@@ -24,18 +25,13 @@ app.set("staticDir", path.join(__dirname, "static"));
 app.use("/static", express.static(app.get("staticDir")));
 app.use(sessions({
   cookieName: "session",
-  secret: 'asdggdsagdsagdsgdsagdsa',
-
-  // Make each login last for one day by default.
-  duration: 1000 * 60 * 60 * 24,
-
-  // Extend the session by ten minutes if the user is still active (instead of
-  // forcing expiration).
-  activeDuration: 1000 * 60 * 10,
+  secret: settings.SESSION_SECRET_KEY,
+  duration: settings.SESSION_DURATION,
+  activeDuration: settings.SESSION_EXTENSION_DURATION,
   cookie: {
-    ephemeral: false,
     httpOnly: true,
-    secure: false
+    ephemeral: settings.SESSION_EPHEMERAL_COOKIES,
+    secure: settings.SESSION_SECURE_COOKIES
   }
 }));
 app.use(bodyParser.urlencoded({ extended: false }));

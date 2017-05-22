@@ -16,5 +16,13 @@ module.exports = {
 
   // our unique secret key -- this keeps sessions secure -- it should never be
   // checked into version control, but it should be the same among all servers
-  SESSION_SECRET_KEY: process.env.SESSION_SECRET_KEY
+  SESSION_SECRET_KEY: process.env.SESSION_SECRET_KEY,
+
+  // only set cookies over https. set this to true if you are running in
+  // production, false otherwise
+  SESSION_SECURE_COOKIES: false,
+
+  // destroy sessions when the browser is closed. set this if you are building a
+  // website where security is paramount (aka: banking, healthcare)
+  SESSION_EPHEMERAL_COOKIES: false
 };
