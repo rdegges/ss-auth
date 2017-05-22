@@ -60,7 +60,7 @@ router.post("/login", (req, res) => {
       return res.render("login", { error: "Incorrect email / password." })
     }
 
-    req.session.userId = user._id;
+    auth.createUserSession(req, res, user);
     res.redirect("/dashboard");
   });
 });
