@@ -8,7 +8,7 @@ const sessions = require("client-sessions");
 
 const auth = require("./auth");
 const authRoutes = require("./routes/auth");
-const middleware = require("./middleware");
+const mainRoutes = require("./routes/main");
 const models = require("./models");
 
 let app = express();
