@@ -46,8 +46,7 @@ app.use(authRoutes);
 app.use(mainRoutes);
 
 // error handling
-app.use((err, req, res) => {
-  console.error(err.stack);
+app.use((err, req, res, next) => {
   res.status(500).send("Something broke :( Please try again.");
 });
 
