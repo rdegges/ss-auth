@@ -21,10 +21,7 @@ router.get("/dashboard", auth.loginRequired, (req, res) => {
     email: req.user.email
   };
 
-  console.log('req.user', req.user);
-  console.log('res.locals.user', res.locals.user);
-
-  res.render("dashboard", { userString: userString });
+  res.render("dashboard", { userString: JSON.stringify(userString, null, 2) });
 });
 
 module.exports = router;
