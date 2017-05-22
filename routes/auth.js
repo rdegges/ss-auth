@@ -3,6 +3,7 @@ const express = require("express");
 
 const auth = require("../auth");
 const models = require("../models");
+const settings = require("../settings");
 
 let router = express.Router();
 
@@ -19,7 +20,7 @@ router.get("/register", (req, res) => {
  * Once a user is logged in, they will be sent to the dashboard page.
  */
 router.post('/register', (req, res) => {
-  let hash = bcrypt.hashSync(req.body.password, BCRYPT_WORK_FACTOR);
+  let hash = bcrypt.hashSync(req.body.password, settings.BCRYPT_WORK_FACTOR);
   req.body.password = hash;
   let user = new models.User(req.body);
 
