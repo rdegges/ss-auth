@@ -27,7 +27,6 @@ module.exports.loginRequired = (req, res, next) => {
  *  @param {Object} user - A user object.
  */
 module.exports.createUserSession = (req, res, user) => {
-  console.log("Creating User Session:", user._id);
   req.session.userId = user._id;
 };
 
