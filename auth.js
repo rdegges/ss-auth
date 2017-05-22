@@ -38,11 +38,11 @@ module.exports.createUserSession = (req, res, user) => {
  *  @param {Object} next - Continue processing the request.
  */
 module.exports.loadUserFromSession = (req, res, next) => {
-  if (!(req.session && req.session.user)) {
+  if (!(req.session && req.session.userId)) {
     return next();
   }
 
-  models.User.findById(req.session.user, (err, user) => {
+  models.User.findById(req.session.userId, (err, user) => {
     if (err) {
       return next(err);
     }
