@@ -41,6 +41,9 @@ app.use(sessions({
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(auth.loadUserFromSession);
 
+// routes
+app.use(authRoutes);
+
 // home page
 app.get("/", (req, res) => {
   res.render("index");
