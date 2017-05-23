@@ -11,6 +11,7 @@ block body
         if error
           p.error #{error}
         form.form-horizontal(method="post")
+          input(type="hidden", name="_csrf", value=csrfToken)
           .form-group
             label.col-sm-2.control-label(for="email") Email
             .col-sm-10
