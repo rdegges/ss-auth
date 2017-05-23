@@ -19,7 +19,7 @@ router.get("/register", (req, res) => {
  *
  * Once a user is logged in, they will be sent to the dashboard page.
  */
-router.post('/register', (req, res) => {
+router.post("/register", (req, res) => {
   let hash = bcrypt.hashSync(req.body.password, settings.BCRYPT_WORK_FACTOR);
   req.body.password = hash;
   let user = new models.User(req.body);
@@ -53,10 +53,10 @@ router.get("/login", (req, res) => {
  * Once a user is logged in, they will be sent to the dashboard page.
  */
 router.post("/login", (req, res) => {
-  models.User.findOne({ email: req.body.email }, 'firstName lastName email password', (err, user) => {
+  models.User.findOne({ email: req.body.email }, "firstName lastName email password", (err, user) => {
     if (!user || !bcrypt.compareSync(req.body.password, user.password)) {
       console.log(req.body.password, user.password);
-      console.log('bad pw :()')
+      console.log("bad pw :()")
       return res.render("login", { error: "Incorrect email / password." })
     }
 
