@@ -2,6 +2,7 @@ const path = require("path");
 
 const bcrypt = require("bcryptjs");
 const bodyParser = require("body-parser");
+const csurf = require("csurf");
 const express = require("express");
 const mongoose = require("mongoose");
 const sessions = require("client-sessions");
@@ -35,6 +36,7 @@ app.use(sessions({
   }
 }));
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(csurf());
 app.use(auth.loadUserFromSession);
 
 // routes
