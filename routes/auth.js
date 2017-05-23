@@ -55,8 +55,6 @@ router.get("/login", (req, res) => {
 router.post("/login", (req, res) => {
   models.User.findOne({ email: req.body.email }, "firstName lastName email password", (err, user) => {
     if (!user || !bcrypt.compareSync(req.body.password, user.password)) {
-      console.log(req.body.password, user.password);
-      console.log("bad pw :()")
       return res.render("login", { error: "Incorrect email / password." })
     }
 
