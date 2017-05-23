@@ -11,7 +11,7 @@ let router = express.Router();
  * Render the registration page.
  */
 router.get("/register", (req, res) => {
-  res.render("register");
+  res.render("register", { csrfToken: req.csrfToken() });
 });
 
 /**
@@ -44,7 +44,7 @@ router.post('/register', (req, res) => {
  * Render the login page.
  */
 router.get("/login", (req, res) => {
-  res.render("login");
+  res.render("login", { csrfToken: req.csrfToken() });
 });
 
 /**
