@@ -33,8 +33,8 @@ module.exports.createUserSession = (req, res, user) => {
   let claims = {
     // you can embed a comma-delimited list of scopes here that will be used for
     // authorization
-    scope: "active"
-    sub: user._id,
+    scope: "active",
+    sub: user._id
   };
   let jwt = nJwt.create(claims, settings.JWT_SIGNING_KEY, settings.JWT_SIGNING_ALGORITHM);
 
