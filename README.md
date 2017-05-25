@@ -72,3 +72,6 @@ talk.
 ## Questions
 
 Got questions?  Hit me up!  I'm [r@rdegges.com](mailto:r@rdegges.com).
+
+
+  [secure-random]: https://www.npmjs.com/package/secure-random "Secure Random on NPM"
