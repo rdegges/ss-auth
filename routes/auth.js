@@ -32,7 +32,10 @@ router.post("/register", (req, res) => {
         error = "That email is already taken. Please try another.";
       }
 
-      return res.render("register", { error: error });
+      return res.render("register", {
+        error: error,
+        csrfToken: req.csrfToken()
+      });
     }
 
     auth.createUserSession(req, res, user);
@@ -55,7 +58,10 @@ router.get("/login", (req, res) => {
 router.post("/login", (req, res) => {
   models.User.findOne({ email: req.body.email }, "firstName lastName email password", (err, user) => {
     if (!user || !bcrypt.compareSync(req.body.password, user.password)) {
-      return res.render("login", { error: "Incorrect email / password." })
+      return res.render("login", {
+        error: "Incorrect email / password.",
+        csrfToken: req.csrfToken()
+      });
     }
 
     auth.createUserSession(req, res, user);
