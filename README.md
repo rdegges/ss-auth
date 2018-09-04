@@ -8,9 +8,9 @@ authentication in a Node.js web app with MongoDB.
 This project is meant to go along with the talk I gave at Twilio Signal 2017.
 The talk walks you through how authentication works, from the ground up.
 
-I'll update this README with a link to the finished talk recording and slides
-once they are live.
+[Talk on youtube](https://www.youtube.com/watch?v=j8Yxff6L_po)
 
+[Slides](https://speakerdeck.com/rdegges)
 
 ## Installation
 
