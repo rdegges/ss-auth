@@ -29,7 +29,7 @@
     "client-sessions": "^0.8.0",
     "csurf": "^1.9.0",
     "express": "^4.15.2",
-    "mongoose": "^4.9.9",
+    "mongoose": "^6.0.4",
     "njwt": "^0.4.0",
     "pug": "^2.0.0-rc.1",
     "secure-random": "^1.1.1"
